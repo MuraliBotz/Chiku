@@ -36,49 +36,68 @@ document.getElementById('input-form').addEventListener('submit', async function(
 
     // Remove the typing indicator once the bot response is ready
     messagesContainer.removeChild(typingIndicator);
+    const uid = "6764358144"; // Replace with actual user ID if needed
+   const apiUrl = `http://api.brainshop.ai/get?bid=181999&key=BTx5oIaCq8Cqut3S&uid=${uid}&msg=${encodeURIComponent(userMessage)}`;
+
 
     // Fetch the bot's response
-    const apiUrl = `http://api.brainshop.ai/get?bid=181999&key=BTx5oIaCq8Cqut3S&uid=$6764358144&msg=${userMessage}`;
+//    const apiUrl = `http://api.brainshop.ai/get?bid=181999&key=BTx5oIaCq8Cqut3S&uid=$6764358144&msg=${userMessage}`;
     try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
+    const response = await fetch(apiUrl);
 
-        // Create a new div for each bot message
-        const botMessageDiv = document.createElement('div');
-        botMessageDiv.classList.add('message', 'bot-message');
-
-        // Add the "Chiku" label and an empty div for the bot's response
-        botMessageDiv.innerHTML = `<div><div class="bot-label">Chiku</div><div class="bot-response"></div></div>`;
-        
-        // Append the new bot message div to the chat
-        messagesContainer.appendChild(botMessageDiv);
-
-        // Scroll to the bottom to show the new message
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-        // Display the bot response text letter by letter
-        const botResponseDiv = botMessageDiv.querySelector('.bot-response');
-        const botResponseText = data.cnt;
-        let currentCharIndex = 0;
-
-        const typeWriterEffect = setInterval(() => {
-            botResponseDiv.textContent += botResponseText[currentCharIndex];
-            currentCharIndex++;
-
-            if (currentCharIndex === botResponseText.length) {
-                clearInterval(typeWriterEffect);
-            }
-
-            // Scroll to the bottom to keep up with the typing effect
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }, 50); // Adjust the speed of the typing effect here
-
-        // Keep the input field focused
-        userMessageInput.focus();
-    } catch (error) {
-        console.error('Error fetching the API:', error);
+    // Check if the response is successful
+    if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
     }
-});
+
+    const data = await response.json();
+
+    // Create a new div for each bot message
+    const botMessageDiv = document.createElement('div');
+    botMessageDiv.classList.add('message', 'bot-message');
+
+    // Add the "Chiku" label and an empty div for the bot's response
+    botMessageDiv.innerHTML = `<div><div class="bot-label">Chiku</div><div class="bot-response"></div></div>`;
+    
+    // Append the new bot message div to the chat
+    messagesContainer.appendChild(botMessageDiv);
+
+    // Scroll to the bottom to show the new message
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+    // Display the bot response text letter by letter
+    const botResponseDiv = botMessageDiv.querySelector('.bot-response');
+    const botResponseText = data.cnt;
+    let currentCharIndex = 0;
+
+    const typeWriterEffect = setInterval(() => {
+        botResponseDiv.textContent += botResponseText[currentCharIndex];
+        currentCharIndex++;
+
+        if (currentCharIndex === botResponseText.length) {
+            clearInterval(typeWriterEffect);
+        }
+
+        // Scroll to the bottom to keep up with the typing effect
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }, 50); // Adjust the speed of the typing effect here
+
+    // Keep the input field focused
+    userMessageInput.focus();
+
+} catch (error) {
+    console.error("Error fetching the API:", error);
+
+    // Display a user-friendly error message in the chat
+    const errorMessageDiv = document.createElement("div");
+    errorMessageDiv.classList.add("message", "bot-message");
+    errorMessageDiv.textContent = "Sorry, there was an error processing your request. Please try again.";
+    messagesContainer.appendChild(errorMessageDiv);
+
+    // Scroll to the bottom to show the error message
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
 
 
 // Toggle sidebar and overlay
