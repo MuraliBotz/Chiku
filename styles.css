@@ -212,7 +212,7 @@ button:hover {
 #sidebar {
     position: fixed;
     top: 0;
-    left: -90%; /* Start off-screen */
+    left: -50%; /* Start off-screen */
     width: 30%;
     height: 100%;
     background: transparent; /* Semi-transparent background */
@@ -223,11 +223,15 @@ button:hover {
     backdrop-filter: blur(30px);
 }
 
+#sidebar.active {
+    left: 0;
+}
+
 #sidebar a {
     display: block;
     padding: 20px;
     font-size: 2em; /* Increase font size by 2x */
-    color: orange;
+    color: white;
     text-decoration: none;
     border-bottom: 1px solid cyan;
 }
@@ -249,11 +253,6 @@ button:hover {
     font-size: 2em; /* Increase icon size by 2x */
     z-index: 1001; /* Ensure it stays on top of the sidebar */
     cursor: pointer;
-}
-
-/* Hide the sidebar when inactive */
-#sidebar.active {
-    left: 0;
 }
 
 /* Background overlay styles */
@@ -301,111 +300,4 @@ button:hover {
 
 @keyframes multiTextGlow {
     0% {
-        filter: drop-shadow(0 0 1rem cyan);
-    }
-    6.25% {
-        filter: drop-shadow(0 0 1rem magenta);
-    }
-    12.5% {
-        filter: drop-shadow(0 0 1rem yellow);
-    }
-    18.75% {
-        filter: drop-shadow(0 0 1rem lime);
-    }
-    25% {
-        filter: drop-shadow(0 0 1rem red);
-    }
-    31.25% {
-        filter: drop-shadow(0 0 1rem blue);
-    }
-    37.5% {
-        filter: drop-shadow(0 0 1rem orange);
-    }
-    43.75% {
-        filter: drop-shadow(0 0 1rem purple);
-    }
-    50% {
-        filter: drop-shadow(0 0 1rem pink);
-    }
-    56.25% {
-        filter: drop-shadow(0 0 1rem lightblue);
-    }
-    62.5% {
-        filter: drop-shadow(0 0 1rem lightgreen);
-    }
-    68.75% {
-        filter: drop-shadow(0 0 1rem gold);
-    }
-    75% {
-        filter: drop-shadow(0 0 1rem coral);
-    }
-    81.25% {
-        filter: drop-shadow(0 0 1rem turquoise);
-    }
-    87.5% {
-        filter: drop-shadow(0 0 1rem violet);
-    }
-    93.75% {
-        filter: drop-shadow(0 0 1rem chartreuse);
-    }
-    100% {
-        filter: drop-shadow(0 0 1rem cyan);
-    }
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-/* Custom scrollbar */
-#messages::-webkit-scrollbar {
-    width: 8px;
-}
-
-#messages::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-#messages::-webkit-scrollbar-thumb {
-    background-color: cyan;
-    border-radius: 10px;
-}
-
-/* Add smooth transitions to flexbox properties */
-#chat-container,
-#messages {
-    transition: all 0.3s ease;
-}
-
-/* Make the chat area responsive */
-@media (max-width: 768px) {
-    #chat-container {
-        flex-direction: column;
-    }
-
-    #messages {
-        max-height: 300px;
-        overflow-y: scroll;
-    }
-
-    #input-form {
-        flex-direction: column;
-    }
-
-    button {
-        margin: 10px 0 0 0;
-        width: 100%;
-    }
-
-    #sidebar {
-        width: 80%;
-    }
-}
+        filter: drop-shadow(0 0 1rem
