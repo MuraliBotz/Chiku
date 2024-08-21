@@ -212,7 +212,7 @@ button:hover {
 #sidebar {
     position: fixed;
     top: 0;
-    left: -90%; /* Adjust this value to control how much the sidebar is hidden */
+    left: -90%; /* Start off-screen */
     width: 30%;
     height: 100%;
     background: transparent; /* Semi-transparent background */
@@ -223,15 +223,11 @@ button:hover {
     backdrop-filter: blur(30px);
 }
 
-#sidebar.active {
-    left: 0;
-}
-
 #sidebar a {
     display: block;
     padding: 20px;
     font-size: 2em; /* Increase font size by 2x */
-    color: whitesmoke;
+    color: orange;
     text-decoration: none;
     border-bottom: 1px solid cyan;
 }
@@ -253,6 +249,11 @@ button:hover {
     font-size: 2em; /* Increase icon size by 2x */
     z-index: 1001; /* Ensure it stays on top of the sidebar */
     cursor: pointer;
+}
+
+/* Hide the sidebar when inactive */
+#sidebar.active {
+    left: 0;
 }
 
 /* Background overlay styles */
@@ -352,85 +353,59 @@ button:hover {
     }
 }
 
-/* Responsive Design */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Custom scrollbar */
+#messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+#messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#messages::-webkit-scrollbar-thumb {
+    background-color: cyan;
+    border-radius: 10px;
+}
+
+/* Add smooth transitions to flexbox properties */
+#chat-container,
+#messages {
+    transition: all 0.3s ease;
+}
+
+/* Make the chat area responsive */
 @media (max-width: 768px) {
     #chat-container {
-        padding: 10px;
-        height: calc(100% - 200px); /* Adjust for smaller screen */
+        flex-direction: column;
     }
 
-    .random-image {
-        width: 180px;
-        height: 200px;
-    }
-
-    .bot-message, .user-message {
-        font-size: 1.2em; /* Reduce font size on mobile */
+    #messages {
+        max-height: 300px;
+        overflow-y: scroll;
     }
 
     #input-form {
         flex-direction: column;
-        padding: 10px;
-    }
-
-    #user-message {
-        margin-bottom: 10px;
-        padding: 15px;
-        font-size: 1em;
     }
 
     button {
-        padding: 15px;
-        font-size: 1em;
+        margin: 10px 0 0 0;
+        width: 100%;
     }
 
     #sidebar {
-        width: 70%; /* Increase sidebar width for mobile */
-    }
-
-    #menu-icon {
-        font-size: 1.5em;
+        width: 80%;
     }
 }
-
-/* Dark mode toggle button */
-#dark-mode-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1002; /* Ensure it stays above the sidebar */
-    font-size: 1.5em;
-    color: cyan;
-    cursor: pointer;
-}
-
-.dark-mode {
-    background: #000000;
-    color: #ffffff;
-}
-
-.dark-mode #user-message, .dark-mode button {
-    border-color: white;
-    box-shadow: 0 0 5px white, 0 0 10px white;
-}
-
-.dark-mode #header {
-    color: #ffffff;
-}
-
-.dark-mode #overlay {
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.dark-mode #sidebar {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-.dark-mode #menu-icon, .dark-mode #dark-mode-toggle {
-    color: white;
-}
-
-.dark-mode .random-image {
-    filter: brightness(80%);
-}
-
