@@ -209,7 +209,7 @@ button:hover {
 }
 
 /* Sidebar styles */
- #sidebar {
+#sidebar {
     position: fixed;
     top: 0;
     left: -30%; /* Adjust this value to control how much the sidebar is hidden */
