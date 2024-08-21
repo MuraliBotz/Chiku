@@ -212,7 +212,7 @@ button:hover {
 #sidebar {
     position: fixed;
     top: 0;
-    left: -50%; /* Start off-screen */
+    left: -90%; /* Start off-screen */
     width: 30%;
     height: 100%;
     background: transparent; /* Semi-transparent background */
