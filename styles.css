@@ -209,10 +209,10 @@ button:hover {
 }
 
 /* Sidebar styles */
-#sidebar {
+ #sidebar {
     position: fixed;
     top: 0;
-    left: -50%; /* Start off-screen */
+    left: -30%; /* Adjust this value to control how much the sidebar is hidden */
     width: 30%;
     height: 100%;
     background: transparent; /* Semi-transparent background */
