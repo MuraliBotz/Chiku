@@ -223,6 +223,10 @@ button:hover {
     backdrop-filter: blur(30px);
 }
 
+#sidebar.active {
+    left: 0;
+}
+
 #sidebar a {
     display: block;
     padding: 20px;
@@ -249,11 +253,6 @@ button:hover {
     font-size: 2em; /* Increase icon size by 2x */
     z-index: 1001; /* Ensure it stays on top of the sidebar */
     cursor: pointer;
-}
-
-/* Hide the sidebar when inactive */
-#sidebar.active {
-    left: 0;
 }
 
 /* Background overlay styles */
@@ -353,104 +352,85 @@ button:hover {
     }
 }
 
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-/* Custom scrollbar */
-#messages::-webkit-scrollbar {
-    width: 8px;
-}
-
-#messages::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-#messages::-webkit-scrollbar-thumb {
-    background-color: cyan;
-    border-radius: 10px;
-}
-
-/* Add smooth transitions to flexbox properties */
-#chat-container,
-#messages {
-    transition: all 0.3s ease;
-}
-
-/* General mobile adjustments */
+/* Responsive Design */
 @media (max-width: 768px) {
-    /* Ensure 3-dot menu is accessible */
-    .three-dot-menu {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 10;
-    }
-
-    /* Make the menu items larger and easier to tap */
-    .three-dot-menu ul {
-        background-color: #333;
-        border-radius: 5px;
-        width: auto;
+    #chat-container {
         padding: 10px;
+        height: calc(100% - 200px); /* Adjust for smaller screen */
     }
 
-    .three-dot-menu ul li {
-        font-size: 1.2rem;
-        padding: 10px 20px;
-        margin: 5px 0;
+    .random-image {
+        width: 180px;
+        height: 200px;
     }
 
-    /* Adjust page content to fit below the menu */
-    #content {
-        margin-top: 50px; /* Adjust based on the menu's height */
-    }
-
-    /* If using a sidebar, hide it by default and make it expandable */
-    #sidebar {
-        display: none; /* Hide sidebar on mobile */
-    }
-
-    #sidebar.show {
-        display: block;
-        position: fixed;
-        width: 75%;
-        height: 100%;
-        background-color: #fff;
-        z-index: 9;
-        top: 0;
-        left: 0;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Adjust the main content area */
-    #main-content {
-        padding: 20px;
-        margin: 0;
-    }
-
-    /* Responsive adjustments for other elements */
-    #messages {
-        max-height: 400px;
-        overflow-y: scroll;
-        margin-bottom: 60px;
+    .bot-message, .user-message {
+        font-size: 1.2em; /* Reduce font size on mobile */
     }
 
     #input-form {
         flex-direction: column;
-        margin: 0 auto;
+        padding: 10px;
+    }
+
+    #user-message {
+        margin-bottom: 10px;
+        padding: 15px;
+        font-size: 1em;
     }
 
     button {
-        width: 100%;
-        margin-top: 10px;
+        padding: 15px;
+        font-size: 1em;
+    }
+
+    #sidebar {
+        width: 70%; /* Increase sidebar width for mobile */
+    }
+
+    #menu-icon {
+        font-size: 1.5em;
     }
 }
+
+/* Dark mode toggle button */
+#dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1002; /* Ensure it stays above the sidebar */
+    font-size: 1.5em;
+    color: cyan;
+    cursor: pointer;
+}
+
+.dark-mode {
+    background: #000000;
+    color: #ffffff;
+}
+
+.dark-mode #user-message, .dark-mode button {
+    border-color: white;
+    box-shadow: 0 0 5px white, 0 0 10px white;
+}
+
+.dark-mode #header {
+    color: #ffffff;
+}
+
+.dark-mode #overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode #sidebar {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode #menu-icon, .dark-mode #dark-mode-toggle {
+    color: white;
+}
+
+.dark-mode .random-image {
+    filter: brightness(80%);
+}
+
