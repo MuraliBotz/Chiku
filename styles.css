@@ -385,27 +385,72 @@ button:hover {
     transition: all 0.3s ease;
 }
 
-/* Make the chat area responsive */
+/* General mobile adjustments */
 @media (max-width: 768px) {
-    #chat-container {
-        flex-direction: column;
+    /* Ensure 3-dot menu is accessible */
+    .three-dot-menu {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 10;
     }
 
+    /* Make the menu items larger and easier to tap */
+    .three-dot-menu ul {
+        background-color: #333;
+        border-radius: 5px;
+        width: auto;
+        padding: 10px;
+    }
+
+    .three-dot-menu ul li {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        margin: 5px 0;
+    }
+
+    /* Adjust page content to fit below the menu */
+    #content {
+        margin-top: 50px; /* Adjust based on the menu's height */
+    }
+
+    /* If using a sidebar, hide it by default and make it expandable */
+    #sidebar {
+        display: none; /* Hide sidebar on mobile */
+    }
+
+    #sidebar.show {
+        display: block;
+        position: fixed;
+        width: 75%;
+        height: 100%;
+        background-color: #fff;
+        z-index: 9;
+        top: 0;
+        left: 0;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Adjust the main content area */
+    #main-content {
+        padding: 20px;
+        margin: 0;
+    }
+
+    /* Responsive adjustments for other elements */
     #messages {
-        max-height: 300px;
+        max-height: 400px;
         overflow-y: scroll;
+        margin-bottom: 60px;
     }
 
     #input-form {
         flex-direction: column;
+        margin: 0 auto;
     }
 
     button {
-        margin: 10px 0 0 0;
         width: 100%;
-    }
-
-    #sidebar {
-        width: 80%;
+        margin-top: 10px;
     }
 }
