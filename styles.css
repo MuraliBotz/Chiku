@@ -18,15 +18,12 @@ body {
     z-index: -1;
 }
 
-
-
 #chat-container {
     width: 100%;
     height: calc(100% - 160px);
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    
 }
 
 #header {
@@ -36,10 +33,7 @@ body {
     animation: Scale 1s ease forwards, multiGlow 70s infinite; 
     scale: 0; 
     animation-delay: 1s; 
-    
 }
-
-
 
 @keyframes Scale {
     to {
@@ -104,7 +98,6 @@ body {
 .random-image {
     width: 270px;
     height: 300px;
-    
 }
 
 #messages {
@@ -131,11 +124,10 @@ body {
     padding: 10px;
     color: whitesmoke;
     font-size: 1.4em; /* Increase the font size for bot messages */
-    
 }
 
 .user-message {
-   align-self: flex-end;
+    align-self: flex-end;
     text-align: right;
     max-width: 70%;
     background-color: transparent;
@@ -158,8 +150,6 @@ body {
     text-align: right;
 }
 
-
-
 #input-form {
     display: flex;
     padding: 20px;
@@ -180,7 +170,7 @@ body {
 }
 
 #user-message::placeholder {
-    color: rgba(0, 255, 255, 0.7); /* Semi-transparent cyan for the placeholder text */
+    color: rgba(0, 255, 255, 1); /* Increase opacity for better visibility */
 }
 
 #user-message:focus {
@@ -188,10 +178,6 @@ body {
     border-color: cyan;
 }
 
-
-
-
-    
 button {
     padding: 20px;
     margin-left: 10px;
@@ -206,7 +192,6 @@ button {
 
 button:hover {
     animation: glowAnimation 1s ease-in-out forwards; /* Apply the animation on hover */
-    
     color: white;
 }
 
@@ -223,12 +208,11 @@ button:hover {
     }
 }
 
-
 /* Sidebar styles */
 #sidebar {
     position: fixed;
     top: 0;
-    left: -50%; /* Start off-screen */
+    left: -90%; /* Start off-screen */
     width: 30%;
     height: 100%;
     background: transparent; /* Semi-transparent background */
@@ -239,6 +223,9 @@ button:hover {
     backdrop-filter: blur(30px);
 }
 
+#sidebar.active {
+    left: 0;
+}
 
 #sidebar a {
     display: block;
@@ -246,19 +233,18 @@ button:hover {
     font-size: 2em; /* Increase font size by 2x */
     color: white;
     text-decoration: none;
-   border-bottom: 1px solid cyan;
+    border-bottom: 1px solid cyan;
 }
 
 #sidebar a:hover {
-   background: #03e9f4;
+    background: #03e9f4;
     color: #050801;
     box-shadow: 0 0 5px #03e9f4,
                 0 0 25px #03e9f4,
                 0 0 50px #03e9f4,
                 0 0 200px #03e9f4;
-     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
-
 
 #menu-icon {
     position: fixed;
@@ -267,11 +253,6 @@ button:hover {
     font-size: 2em; /* Increase icon size by 2x */
     z-index: 1001; /* Ensure it stays on top of the sidebar */
     cursor: pointer;
-}
-
-/* Hide the sidebar when inactive */
-#sidebar.active {
-    left: 0;
 }
 
 /* Background overlay styles */
@@ -303,7 +284,7 @@ button:hover {
     animation: slideRight 4s ease forwards, multiTextGlow 70s infinite; 
     transform: scale(0); /* Corrected this line */
     animation-delay: 1s; 
-    -webkit-box-reflect:below 0.4px linear-gradient(transparent, #0005);
+    -webkit-box-reflect: below 0.4px linear-gradient(transparent, #0005);
 }
 
 @keyframes slideRight {
@@ -319,76 +300,4 @@ button:hover {
 
 @keyframes multiTextGlow {
     0% {
-        filter: drop-shadow(0 0 1rem cyan);
-    }
-    6.25% {
-        filter: drop-shadow(0 0 1rem aquamarine);
-    }
-    12.5% {
-        filter: drop-shadow(0 0 1rem violet);
-    }
-    18.75% {
-        filter: drop-shadow(0 0 1rem coral);
-    }
-    25% {
-        filter: drop-shadow(0 0 1rem turquoise);
-    }
-    31.25% {
-        filter: drop-shadow(0 0 1rem orchid);
-    }
-    37.5% {
-        filter: drop-shadow(0 0 1rem lightpink);
-    }
-    43.75% {
-        filter: drop-shadow(0 0 1rem gold);
-    }
-    50% {
-        filter: drop-shadow(0 0 1rem salmon);
-    }
-    56.25% {
-        filter: drop-shadow(0 0 1rem skyblue);
-    }
-    62.5% {
-        filter: drop-shadow(0 0 1rem fuchsia);
-    }
-    68.75% {
-        filter: drop-shadow(0 0 1rem limegreen);
-    }
-    75% {
-        filter: drop-shadow(0 0 1rem peachpuff);
-    }
-    81.25% {
-        filter: drop-shadow(0 0 1rem indigo);
-    }
-    87.5% {
-        filter: drop-shadow(0 0 1rem seagreen);
-    }
-    93.75% {
-        filter: drop-shadow(0 0 1rem darkorange);
-    }
-    100% {
-        filter: drop-shadow(0 0 1rem cyan);
-    }
-}
-
-.typing-indicator {
-    font-size: 1.4em;
-    color: lime;
-    font-family: 'Courier New', Courier, monospace;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid;
-    width: 0;
-    animation: typing 2s steps(30) forwards, blinkCaret 0.5s step-end infinite;
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 15ch; } /* Adjust this value based on the length of the text */
-}
-
-@keyframes blinkCaret {
-    from, to { border-color: transparent; }
-    50% { border-color: lime; }
-}
-
+        filter: drop-shadow(0 0 1rem
