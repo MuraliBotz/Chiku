@@ -37,10 +37,11 @@ document.getElementById('input-form').addEventListener('submit', async function(
     // Remove the typing indicator once the bot response is ready
     messagesContainer.removeChild(typingIndicator);
 
-    const uid = "6764358144"; // Replace with actual user ID if needed
-    const apiUrl = `http://api.brainshop.ai/get?bid=183059&key=nDymyEFVKg5NH7Yq&uid=6764358144&msg={userMessage}`;
+    // New API Integration
+    const base64EncodedUrl = "aHR0cHM6Ly9mYWxsZW54Ym90LnZlcmNlbC5hcHAvYXBpL2FwaWtleT01OTM1NjA4Mjk3LWZhbGxlbi11c2JrMzNrYnN1L2dyb3VwLWNvbnRyb2xsZXIvbXVrZXNoL21lc3NhZ2U9";
+    const decodedUrl = atob(base64EncodedUrl); // Decode the base64 URL
+    const apiUrl = `${decodedUrl}${encodeURIComponent(userMessage)}`;
 
-    // Log details for debugging
     console.log("User message:", userMessage);
     console.log("API URL:", apiUrl);
     console.log("Fetching response...");
@@ -71,7 +72,7 @@ document.getElementById('input-form').addEventListener('submit', async function(
 
         // Display the bot response text letter by letter
         const botResponseDiv = botMessageDiv.querySelector('.bot-response');
-        const botResponseText = data.cnt;
+        const botResponseText = data.reply;  // Adjusted for the new API response format
         let currentCharIndex = 0;
 
         const typeWriterEffect = setInterval(() => {
@@ -102,7 +103,7 @@ document.getElementById('input-form').addEventListener('submit', async function(
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
 
-}); // <-- This is the missing closing brace for the form submit event listener
+});
 
 // Toggle sidebar and overlay
 document.getElementById('menu-icon').addEventListener('click', function() {
@@ -142,4 +143,3 @@ const imageUrls = [
 ];
 const randomImageUrl = imageUrls[Math.floor(Math.random() * imageUrls.length)];
 document.getElementById("random-image").src = randomImageUrl;
-
