@@ -36,8 +36,14 @@ document.getElementById('input-form').addEventListener('submit', async function(
 
     // Remove the typing indicator once the bot response is ready
     messagesContainer.removeChild(typingIndicator);
+
     const uid = "6764358144"; // Replace with actual user ID if needed
-    const apiUrl = `https://api.brainshop.ai/get?bid=181999&key=BTx5oIaCq8Cqut3S&uid=6764358144&msg=${userMessage}`;
+    const apiUrl = `https://api.brainshop.ai/get?bid=181999&key=BTx5oIaCq8Cqut3S&uid=${uid}&msg=${userMessage}`;
+
+    // Log details for debugging
+    console.log("User message:", userMessage);
+    console.log("API URL:", apiUrl);
+    console.log("Fetching response...");
 
     // Fetch the bot's response
     try {
