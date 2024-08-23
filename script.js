@@ -38,7 +38,7 @@ document.getElementById('input-form').addEventListener('submit', async function(
     messagesContainer.removeChild(typingIndicator);
 
     const uid = "6764358144"; // Replace with actual user ID if needed
-    const apiUrl = `https://api.brainshop.ai/get?bid=181999&key=BTx5oIaCq8Cqut3S&uid=${uid}&msg=${userMessage}`;
+    const apiUrl = `http://api.brainshop.ai/get?bid=183059&key=nDymyEFVKg5NH7Yq&uid=6764358144&msg={userMessage}`;
 
     // Log details for debugging
     console.log("User message:", userMessage);
