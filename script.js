@@ -82,7 +82,6 @@ setInterval(updateGradientBackground, 30); // It Means 10 milliseconds
 
         // Add the "Chiku" label and an empty bot response div under it
         
-
 // Your existing code for gradient and other functionalities...
 
 document.getElementById('input-form').addEventListener('submit', async function(event) {
@@ -130,6 +129,9 @@ document.getElementById('input-form').addEventListener('submit', async function(
 
     try {
         const response = await fetch(decodedApiUrl);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         const data = await response.json();
 
         // Create a new div for each bot message
@@ -165,7 +167,21 @@ document.getElementById('input-form').addEventListener('submit', async function(
         // Keep the input field focused
         userMessageInput.focus();
     } catch (error) {
-        console.error('Error fetching the API:', error);
+        // Handle and display the error
+        const botMessageDiv = document.createElement('div');
+        botMessageDiv.classList.add('message', 'bot-message');
+
+        // Add the "Chiku" label and display the error message
+        botMessageDiv.innerHTML = `<div><div class="bot-label">Chiku</div><div class="bot-response">Sorry, something went wrong. Error: ${error.message}</div></div>`;
+        
+        // Append the new bot message div to the chat
+        messagesContainer.appendChild(botMessageDiv);
+
+        // Scroll to the bottom to show the new message
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+        // Keep the input field focused
+        userMessageInput.focus();
     }
 });
 
