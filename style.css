@@ -22,7 +22,7 @@ body {
 
 #chat-container {
     width: 100%;
-    height: 100%;
+    height: 99%;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -175,16 +175,16 @@ body {
     background-color: transparent;
     color: cyan;
     font-size: 1em;
-    box-shadow: 0 0 5px cyan, 0 0 10px cyan; /* Neon glow effect */
+    box-shadow: 0 0 5px cyan, 0 0 10px cyan; 
     outline: none;
 }
 
 #user-message::placeholder {
-    color: rgba(0, 255, 255, 0.7); /* Semi-transparent cyan for the placeholder text */
+    color: rgba(0, 255, 255, 0.7); 
 }
 
 #user-message:focus {
-    box-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 40px cyan, 0 0 60px cyan; /* Increase glow on focus */
+    box-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 40px cyan, 0 0 60px cyan; 
     border-color: cyan;
 }
 
@@ -200,17 +200,17 @@ button {
     background-color: transparent;
     color: cyan;
     cursor: pointer;
-    box-shadow: 0 0 5px cyan, 0 0 10px cyan; /* Initial glow effect */
-    transition: box-shadow 1s ease-in-out; /* Smooth transition for the initial state */
+    box-shadow: 0 0 5px cyan, 0 0 10px cyan; 
+    transition: box-shadow 1s ease-in-out;
 }
 
 button:hover {
-    animation: glowAnimation 1s ease-in-out forwards; /* Apply the animation on hover */
+    animation: glowAnimation 1s ease-in-out forwards; 
     
     color: white;
 }
 
-/* Define the glow animation */
+
 @keyframes glowAnimation {
     0% {
         box-shadow: 0 0 5px cyan, 0 0 10px cyan;
@@ -224,18 +224,18 @@ button:hover {
 }
 
 
-/* Sidebar styles */
+
 #sidebar {
     position: fixed;
     top: 0;
-    left: -50%; /* Start off-screen */
+    left: -50%;
     width: 30%;
     height: 100%;
-    background: transparent; /* Semi-transparent background */
+    background: transparent;
     color: white;
-    transition: left 0.3s ease; /* Smooth transition for showing/hiding */
-    z-index: 1000; /* Ensure it appears above other content */
-    padding: 80px 20px 20px; /* Increase top padding */
+    transition: left 0.3s ease; 
+    z-index: 1000; 
+    padding: 80px 20px 20px; 
     backdrop-filter: blur(30px);
 }
 
@@ -243,7 +243,7 @@ button:hover {
 #sidebar a {
     display: block;
     padding: 20px;
-    font-size: 2em; /* Increase font size by 2x */
+    font-size: 2em;
     color: white;
     text-decoration: none;
    border-bottom: 1px solid cyan;
@@ -264,24 +264,24 @@ button:hover {
     position: fixed;
     top: 20px;
     left: 20px;
-    font-size: 2em; /* Increase icon size by 2x */
-    z-index: 1001; /* Ensure it stays on top of the sidebar */
+    font-size: 2em;
+    z-index: 1001; 
     cursor: pointer;
 }
 
-/* Hide the sidebar when inactive */
+
 #sidebar.active {
     left: 0;
 }
 
-/* Background overlay styles */
+/
 #overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0); /* Set background to fully transparent */
+    background: rgba(0, 0, 0, 0); 
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -291,7 +291,7 @@ button:hover {
 #overlay.active {
     visibility: visible;
     opacity: 1;
-    background: rgba(0, 0, 0, 0); /* Ensure background is fully transparent */
+    background: rgba(0, 0, 0, 0);
 }
 
 .chiku-text {
@@ -301,18 +301,18 @@ button:hover {
     text-decoration: underline;
     text-decoration-color: forestgreen;
     animation: slideRight 4s ease forwards, multiTextGlow 70s infinite; 
-    transform: scale(0); /* Corrected this line */
+    transform: scale(0);
     animation-delay: 1s; 
     -webkit-box-reflect:below 0.4px linear-gradient(transparent, #0005);
 }
 
 @keyframes slideRight {
     0% {
-        transform: translateX(-100px) scale(1); /* Added scale(1) to ensure it scales to the normal size */
+        transform: translateX(-100px) scale(1); 
         opacity: 0;
     }
     100% {
-        transform: translateX(0px) scale(1); /* Adjusted to scale(1) */
+        transform: translateX(0px) scale(1);
         opacity: 1;
     }
 }
@@ -384,7 +384,7 @@ button:hover {
 
 @keyframes typing {
     from { width: 0; }
-    to { width: 15ch; } /* Adjust this value based on the length of the text */
+    to { width: 15ch; }
 }
 
 @keyframes blinkCaret {
