@@ -34,3 +34,8 @@
     <img src="https://img.shields.io/badge/click%20me-007BFF?style=for-the-badge&logo=appveyor&logoColor=white&labelColor=007BFF&color=white&logoWidth=25" alt="Click Here" width="150">
   </a>
 </p>
+
+
+<p align="left"> 
+   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer"/> 
+ </p>
