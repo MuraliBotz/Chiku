@@ -30,5 +30,8 @@
 # 𝐂𝐥𝐢𝐜𝐤 𝐓𝐡𝐞 𝐁𝐞𝐥𝐨𝐰 𝐁𝐮𝐭𝐭𝐨𝐧 𝐓𝐨 𝐑𝐞𝐝𝐢𝐫𝐞𝐜𝐭 𝐓𝐨 𝐂𝐇𝐈𝐊𝐔 𝐰𝐞𝐛𝐬𝐢𝐭𝐞
 
 <p align="center">
-  <a href="https://muralibotz.github.io/Chiku/" target="_blank" style="font-size: small;">Click Here</a>
+  <a href="https://muralibotz.github.io/Chiku/">
+    <img src="https://img.shields.io/badge/click%20me-007BFF?style=for-the-badge&logo=appveyor&logoColor=white" alt="Click Here">
+  </a>
 </p>
+
