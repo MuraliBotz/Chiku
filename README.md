@@ -31,7 +31,6 @@
 
 <p align="center">
   <a href="https://muralibotz.github.io/Chiku/">
-    <img src="https://img.shields.io/badge/click%20me-007BFF?style=for-the-badge&logo=appveyor&logoColor=white" alt="Click Here">
+    <img src="https://img.shields.io/badge/click%20me-007BFF?style=for-the-badge&logo=appveyor&logoColor=white&labelColor=007BFF&color=white&logoWidth=25" alt="Click Here" width="150">
   </a>
 </p>
-
