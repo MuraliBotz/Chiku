@@ -130,7 +130,7 @@ body {
     border-radius: 10px;
     padding: 10px;
     color: whitesmoke;
-    font-size: 1.4em; /* Increase the font size for bot messages */
+    font-size: 1.4em;
     
 }
 
@@ -142,7 +142,7 @@ body {
     border-radius: 10px;
     padding: 10px;
     color: whitesmoke;
-    font-size: 1.4em; /* Increase the font size for user messages */
+    font-size: 1.4em;
 }
 
 .bot-label {
@@ -274,7 +274,7 @@ button:hover {
     left: 0;
 }
 
-/
+
 #overlay {
     position: fixed;
     top: 0;
