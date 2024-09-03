@@ -203,28 +203,9 @@ button {
     cursor: pointer;
     box-shadow: 0 0 5px cyan, 0 0 10px cyan; 
     transition: box-shadow 1s ease-in-out;
-  
+ 
 }
 
-
-button:hover {
-/*    animation: glowAnimation 1s ease-in-out forwards; */
-    background-color: transparent;
-    color: cyan;
-}
-
-
-@keyframes glowAnimation {
-    0% {
-        box-shadow: 0 0 5px cyan, 0 0 10px cyan;
-    }
-    50% {
-        box-shadow: 0 0 20px cyan, 0 0 40px cyan, 0 0 80px cyan;
-    }
-    100% {
-        box-shadow: 0 0 5px cyan, 0 0 10px cyan;
-    }
-}
 
 
 
