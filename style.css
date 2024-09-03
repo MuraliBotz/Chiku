@@ -203,14 +203,14 @@ button {
     cursor: pointer;
     box-shadow: 0 0 5px cyan, 0 0 10px cyan; 
     transition: box-shadow 1s ease-in-out;
-    animation: Scale 1s ease forwards
+  /*  animation: Scale 1s ease forwards*/
 }
 
-/*
+
 button:hover {
-    animation: glowAnimation 1s ease-in-out forwards; 
-    
-    color: white;
+/*    animation: glowAnimation 1s ease-in-out forwards; */
+    background: transparent;
+    color: transparent;
 }
 
 
@@ -226,7 +226,7 @@ button:hover {
     }
 }
 
-*/
+
 
 #sidebar {
     position: fixed;
