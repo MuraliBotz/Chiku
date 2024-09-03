@@ -7,7 +7,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
 }
 
 #gradient {
@@ -103,8 +102,8 @@ body {
 }
 
 .random-image {
-    max-width: 100%;
-    height: auto;
+    width: 270px;
+    height: 300px;
     
 }
 
@@ -244,7 +243,7 @@ button:hover {
 #sidebar a {
     display: block;
     padding: 20px;
-/*    font-size: 2em;*/
+    font-size: 2em;
     color: white;
     text-decoration: none;
    border-bottom: 1px solid cyan;
@@ -265,7 +264,7 @@ button:hover {
     position: fixed;
     top: 20px;
     left: 20px;
- /*   font-size: 2em;*/
+    font-size: 2em;
     z-index: 1001; 
     cursor: pointer;
 }
@@ -296,7 +295,7 @@ button:hover {
 }
 
 .chiku-text {
-/*    font-size: 40px;*/
+    font-size: 40px;
     margin: 10px 0;
     color: cyan;
     text-decoration: underline;
@@ -393,12 +392,14 @@ button:hover {
     50% { border-color: lime; }
 }
 
+
 @media only screen and (max-width: 600px) {
     body {
         transform: scale(0.75);
         transform-origin: 0 0;
-        width: 133.33%;
+        width: 133.33%; 
     }
     
-
+    
 }
+
