@@ -3025,7 +3025,7 @@ function generateResponse(message) {
         if (containsInappropriateContent(lowerCaseMessage)) {
             response = getRandomReply();  
         } else {
-            if (lowerCaseMessage.includes("hello") || lowerCaseMessage.includes("hi") || lowerCaseMessage.includes("hui")) {
+            if (lowerCaseMessage.includes("hello") || lowerCaseMessage.includes("hi") || lowerCaseMessage.includes("hui")) || lowerCaseMessage.includes("hola")) {
                 response = responses["greetings"][Math.floor(Math.random() * responses["greetings"].length)];
             } else if (lowerCaseMessage.includes("bye") || lowerCaseMessage.includes("goodbye")) {
                 response = responses["farewell"][Math.floor(Math.random() * responses["farewell"].length)];
