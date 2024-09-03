@@ -2,9 +2,9 @@
     body {
         transform: scale(0.75);
         transform-origin: 0 0;
-        width: 133.33%; /* Adjust the width accordingly */
+        width: 203.33%; /* Adjust the width accordingly */
         background: #081b29;
-    color: white;
+    color: cyan;
     font-family: serif;
     margin: 0;
     height: 100vh;
