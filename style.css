@@ -184,10 +184,6 @@ body {
     color: rgba(0, 255, 255, 0.7); 
 }
 
-#user-message:focus {
-    box-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 40px cyan, 0 0 60px cyan; 
-    border-color: cyan;
-}
 
 
 
