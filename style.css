@@ -1,10 +1,22 @@
-html, body {
-    background: #081b29;
-    height: 100%;
+@media only screen and (max-width: 600px) {
+    body {
+        transform: scale(0.75);
+        transform-origin: 0 0;
+        width: 133.33%; /* Adjust the width accordingly */
+        background: #081b29;
+    color: white;
+    font-family: serif;
     margin: 0;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    /* Add additional styles if you need to adjust specific elements */
 }
+
+
 
 #gradient {
     position: fixed;
@@ -18,12 +30,12 @@ html, body {
 
 
 #chat-container {
-    flex-grow: 1;
+    width: 100%;
+    height: 92%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensures the form is at the bottom */
-    padding: 0; /* Remove any padding if present */
-    box-sizing: border-box;
+    overflow-y: auto;
+    
 }
 
 #header {
@@ -106,10 +118,12 @@ html, body {
 
 #messages {
     flex-grow: 1;
-    overflow-y: auto;
     padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
-
 
 .message {
     margin: 10px 0;
@@ -157,17 +171,15 @@ html, body {
 
 #input-form {
     display: flex;
-    padding: 10px;
+    padding: 20px;
     background-color: transparent;
-    border-top: 2px solid cyan;
-    width: 100%;
-    box-sizing: border-box;
+    border-top: cyan;
 }
 
 #user-message {
     flex-grow: 1;
-    padding: 10px;
-    border-radius: 20px;
+    padding: 20px;
+    border-radius: 29px;
     border: 2px solid cyan;
     background-color: transparent;
     color: cyan;
@@ -190,9 +202,9 @@ html, body {
 
     
 button {
-    padding: 10px;
+    padding: 20px;
     margin-left: 10px;
-    border-radius: 20px;
+    border-radius: 29px;
     border: 2px solid cyan;
     background-color: transparent;
     color: cyan;
@@ -390,13 +402,4 @@ button:hover {
 }
 
 
-@media only screen and (max-width: 600px) {
-    body {
-        transform: scale(0.75);
-        transform-origin: 0 0;
-        width: 133.33%; 
-    }
-    
-    
-}
 
