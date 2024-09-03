@@ -7,6 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1em;
 }
 
 #gradient {
@@ -102,8 +103,8 @@ body {
 }
 
 .random-image {
-    width: 270px;
-    height: 300px;
+    width: 220px;
+    height: 250px;
     
 }
 
@@ -130,7 +131,7 @@ body {
     border-radius: 10px;
     padding: 10px;
     color: whitesmoke;
-    font-size: 1.4em;
+  /*  font-size: 1.4em;*/
     
 }
 
@@ -142,18 +143,18 @@ body {
     border-radius: 10px;
     padding: 10px;
     color: whitesmoke;
-    font-size: 1.4em;
+  /*  font-size: 1.4em;*/
 }
 
 .bot-label {
     color: #aaa;
-    font-size: 0.8em;
+    font-size: 0.4em;
     margin-bottom: 5px;
 }
 
 .user-label {
     color: #aaa;
-    font-size: 0.8em;
+    font-size: 0.4em;
     margin-bottom: 5px;
     text-align: right;
 }
@@ -174,7 +175,7 @@ body {
     border: 2px solid cyan;
     background-color: transparent;
     color: cyan;
-    font-size: 1em;
+  /*  font-size: 1em;*/
     box-shadow: 0 0 5px cyan, 0 0 10px cyan; 
     outline: none;
 }
@@ -295,7 +296,7 @@ button:hover {
 }
 
 .chiku-text {
-    font-size: 40px;
+   /* font-size: 40px;*/
     margin: 10px 0;
     color: cyan;
     text-decoration: underline;
@@ -372,7 +373,7 @@ button:hover {
 }
 
 .typing-indicator {
-    font-size: 1.4em;
+   /* font-size: 1.4em;*/
     color: lime;
     font-family: 'Courier New', Courier, monospace;
     white-space: nowrap;
