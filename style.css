@@ -7,7 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 #gradient {
@@ -103,8 +103,8 @@ body {
 }
 
 .random-image {
-    width: 220px;
-    height: 250px;
+    width: 180px;
+    height: 210px;
     
 }
 
