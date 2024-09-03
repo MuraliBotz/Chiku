@@ -393,4 +393,12 @@ button:hover {
     50% { border-color: lime; }
 }
 
+@media only screen and (max-width: 600px) {
+    body {
+        transform: scale(0.75);
+        transform-origin: 0 0;
+        width: 133.33%;
+    }
+    
 
+}
