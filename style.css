@@ -1,12 +1,9 @@
-body {
+html, body {
     background: #081b29;
-    color: white;
-    font-family: serif;
+    height: 100%;
     margin: 0;
-    height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
 }
 
 #gradient {
@@ -21,13 +18,12 @@ body {
 
 
 #chat-container {
-    width: 100%;
-    height: 100%; /* Make chat container take up the full height */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align content to the top */
-    overflow-y: auto;
-    box-sizing: border-box; /* Ensure padding and border are included in element's width and height */
+    justify-content: space-between; /* Ensures the form is at the bottom */
+    padding: 0; /* Remove any padding if present */
+    box-sizing: border-box;
 }
 
 #header {
@@ -110,11 +106,8 @@ body {
 
 #messages {
     flex-grow: 1;
-    padding: 20px;
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    padding: 20px;
 }
 
 
@@ -164,18 +157,17 @@ body {
 
 #input-form {
     display: flex;
-    padding: 20px;
+    padding: 10px;
     background-color: transparent;
-    border-top: cyan;
-    width: 100%; /* Make the form full width */
+    border-top: 2px solid cyan;
+    width: 100%;
     box-sizing: border-box;
-    position: relative; /* Keep it relative inside the container */
 }
 
 #user-message {
     flex-grow: 1;
-    padding: 20px;
-    border-radius: 29px;
+    padding: 10px;
+    border-radius: 20px;
     border: 2px solid cyan;
     background-color: transparent;
     color: cyan;
@@ -198,9 +190,9 @@ body {
 
     
 button {
-    padding: 20px;
+    padding: 10px;
     margin-left: 10px;
-    border-radius: 29px;
+    border-radius: 20px;
     border: 2px solid cyan;
     background-color: transparent;
     color: cyan;
