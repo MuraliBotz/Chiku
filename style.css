@@ -22,11 +22,12 @@ body {
 
 #chat-container {
     width: 100%;
-    height: 100%;
+    height: 100%; /* Make chat container take up the full height */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start; /* Align content to the top */
     overflow-y: auto;
+    box-sizing: border-box; /* Ensure padding and border are included in element's width and height */
 }
 
 #header {
@@ -116,6 +117,7 @@ body {
     justify-content: flex-start;
 }
 
+
 .message {
     margin: 10px 0;
     display: flex;
@@ -165,9 +167,9 @@ body {
     padding: 20px;
     background-color: transparent;
     border-top: cyan;
-    position: sticky;
-    bottom: 0;
-    width: 100%;
+    width: 100%; /* Make the form full width */
+    box-sizing: border-box;
+    position: relative; /* Keep it relative inside the container */
 }
 
 #user-message {
