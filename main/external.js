@@ -108,7 +108,7 @@ const imageUrls = [
     "Image/chikuu1.png",
     "Image/chikuu2.png",
     "Image/chiku5.png",
-    "Image/chiku6.png",
+ //   "Image/chiku6.png",
 ];
 
 const randomImageUrl = imageUrls[Math.floor(Math.random() * imageUrls.length)];
